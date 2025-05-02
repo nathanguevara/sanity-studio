@@ -1,0 +1,15 @@
+[build]
+  base = "sanity-studio"                  # 👈 tells Netlify to run build commands from inside this folder
+  command = "npm run build"               # 👈 runs inside the subfolder
+  publish = "sanity-studio/dist"          # 👈 Netlify serves from this output folder
+
+[build.environment]
+  NODE_VERSION = "18"
+  SANITY_STUDIO_PROJECT_ID = "your_project_id"
+  SANITY_STUDIO_DATASET = "production"
+  SANITY_STUDIO_API_VERSION = "2023-12-14"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
