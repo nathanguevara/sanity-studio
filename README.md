@@ -49,8 +49,8 @@ sanity-studio/
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/nathanguevara/sanity-studio.git
-cd sanity-studio/sanity-studio
+git clone https://github.com/nathanguevara/sanity-studio-schema-starter.git
+cd sanity-studio-schema-starter
 ```
 
 ### 2. Install dependencies
@@ -61,17 +61,19 @@ npm install
 
 ### 3. Set up your local environment
 
-Copy `.env.example` and fill in your actual project ID and dataset.
-
+1. Copy `.env.example` to create your local `.env` file:
 ```bash
 cp .env.example .env
 ```
 
-```
+2. Update the `.env` file with your Sanity project details:
+```env
 SANITY_STUDIO_PROJECT_ID=your_project_id
 SANITY_STUDIO_DATASET=production
 SANITY_STUDIO_API_VERSION=2023-12-14
 ```
+
+You can find your project ID in your [Sanity project settings](https://www.sanity.io/manage).
 
 ### 4. Run locally
 
@@ -97,9 +99,9 @@ npm install @sanity/client groq
 import { createClient } from '@sanity/client'
 
 export const sanity = createClient({
-  projectId: 'your_project_id',
-  dataset: 'production',
-  apiVersion: '2023-12-14',
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID,
+  dataset: process.env.SANITY_STUDIO_DATASET,
+  apiVersion: process.env.SANITY_STUDIO_API_VERSION,
   useCdn: true,
 })
 ```
@@ -112,11 +114,18 @@ const posts = await sanity.fetch(`*[_type == "post"]{title, slug}`)
 
 4. (Optional) Use `@portabletext/react` to render rich content.
 
----
-
 ## 🔐 Deployment
 
-This Studio is deployed to Netlify using the included `netlify.toml` configuration. It uses environment variables set in the Netlify UI — no secrets are committed to this repo.
+This Studio is configured for deployment on Netlify. Follow these steps to deploy:
+
+1. Push your code to GitHub
+2. Connect your repository to Netlify
+3. Set up the following environment variables in Netlify's dashboard (Site settings > Build & deploy > Environment):
+   - `SANITY_STUDIO_PROJECT_ID`
+   - `SANITY_STUDIO_DATASET`
+   - `SANITY_STUDIO_API_VERSION`
+
+The `netlify.toml` file is already configured with the correct build settings. No additional configuration is needed.
 
 ## 🤝 Contributions
 
