@@ -1,7 +1,7 @@
 [build]
-  base = "sanity-studio"                  # 👈 tells Netlify to run build commands from inside this folder
-  command = "npm run build"               # 👈 runs inside the subfolder
-  publish = "sanity-studio/dist"          # 👈 Netlify serves from this output folder
+  base = "."                  # 👈 tells Netlify to run build commands from inside this folder
+  command = "npm install && npm run build"   # 👈 install dependencies and build
+  publish = "dist"          # 👈 Netlify serves from this output folder
 
 [build.environment]
   NODE_VERSION = "18"

@@ -2,11 +2,11 @@ import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
 import { visionTool } from '@sanity/vision'
 import { schemaTypes } from './schemas'
-import deskStructure from '/sanity-studio/deskStructure.js'
+import deskStructure from './deskStructure.js'
 
 export default defineConfig({
   name: 'default',
-  title: 'Sanity Studio',
+  title: 'Sanity Studio Schema Starter',
 
   projectId: process.env.SANITY_STUDIO_PROJECT_ID!,
   dataset: process.env.SANITY_STUDIO_DATASET!,

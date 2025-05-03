@@ -1,6 +1,30 @@
-# ✨ Sanity Studio: Headless CMS for Blog + Portfolio
+# Sanity Studio Schema Starter
 
-This is a Sanity Studio v3 project configured to manage content for both a **developer blog** and a **personal portfolio website**. It uses a flexible schema system designed to support modular page building and reusable content blocks.
+This is a [Sanity Studio](https://www.sanity.io/) project bootstrapped with `create-sanity`.
+
+## What's inside?
+
+This Sanity Studio template includes:
+
+- A fully configured Sanity Studio
+- A collection of useful schemas for common website components
+- A custom desk structure for better content organization
+- TypeScript support
+- ESLint and Prettier configuration
+
+## Getting started
+
+```bash
+# Clone the repository
+git clone https://github.com/nathanguevara/sanity-studio-schema-starter.git
+cd sanity-studio-schema-starter
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
 
 ## 🔧 Tech Stack
 
