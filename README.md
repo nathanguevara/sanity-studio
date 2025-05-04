@@ -68,9 +68,9 @@ cp .env.example .env
 
 2. Update the `.env` file with your Sanity project details:
 ```env
-SANITY_STUDIO_PROJECT_ID=<your_project_id>
-SANITY_STUDIO_DATASET=<production>
-SANITY_STUDIO_API_VERSION=<2023-12-14>
+SANITY_STUDIO_PROJECT_ID=
+SANITY_STUDIO_DATASET=
+SANITY_STUDIO_API_VERSION=
 ```
 
 You can find your project ID in your [Sanity project settings](https://www.sanity.io/manage).
