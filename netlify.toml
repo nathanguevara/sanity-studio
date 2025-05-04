@@ -4,7 +4,8 @@
   publish = "dist"          # 👈 Netlify serves from this output folder
 
 [build.environment]
-  NODE_VERSION = "18"
+  SECRETS_SCAN_OMIT_PATHS = "dist"
+  NODE_VERSION = "20"
   SANITY_STUDIO_PROJECT_ID = "your_project_id"
   SANITY_STUDIO_DATASET = "production"
   SANITY_STUDIO_API_VERSION = "2023-12-14"
