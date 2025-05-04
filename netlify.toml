@@ -1,14 +1,13 @@
 [build]
-  base = "."                  # 👈 tells Netlify to run build commands from inside this folder
-  command = "npm install && npm run build"   # 👈 install dependencies and build
-  publish = "dist"          # 👈 Netlify serves from this output folder
+  base = "."
+  command = "npm install && npm run build"
+  publish = "dist"
 
 [build.environment]
-  SECRETS_SCAN_OMIT_PATHS = "dist"
   NODE_VERSION = "20"
-  SANITY_STUDIO_PROJECT_ID = "your_project_id"
-  SANITY_STUDIO_DATASET = "production"
-  SANITY_STUDIO_API_VERSION = "2023-12-14"
+  SANITY_STUDIO_PROJECT_ID = "${SANITY_STUDIO_PROJECT_ID}"
+  SANITY_STUDIO_DATASET = "${SANITY_STUDIO_DATASET}"
+  SANITY_STUDIO_API_VERSION = "${SANITY_STUDIO_API_VERSION}"
 
 [[redirects]]
   from = "/*"
